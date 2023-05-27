@@ -1,0 +1,15 @@
+C:\Users\eduardo.franco\UNICAMP\Programacao_em_C#\JewellCollector\bin\Debug\net7.0\JewellCollector.exe
+C:\Users\eduardo.franco\UNICAMP\Programacao_em_C#\JewellCollector\bin\Debug\net7.0\JewellCollector.deps.json
+C:\Users\eduardo.franco\UNICAMP\Programacao_em_C#\JewellCollector\bin\Debug\net7.0\JewellCollector.runtimeconfig.json
+C:\Users\eduardo.franco\UNICAMP\Programacao_em_C#\JewellCollector\bin\Debug\net7.0\JewellCollector.dll
+C:\Users\eduardo.franco\UNICAMP\Programacao_em_C#\JewellCollector\bin\Debug\net7.0\JewellCollector.pdb
+C:\Users\eduardo.franco\UNICAMP\Programacao_em_C#\JewellCollector\obj\Debug\net7.0\JewellCollector.csproj.AssemblyReference.cache
+C:\Users\eduardo.franco\UNICAMP\Programacao_em_C#\JewellCollector\obj\Debug\net7.0\JewellCollector.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eduardo.franco\UNICAMP\Programacao_em_C#\JewellCollector\obj\Debug\net7.0\JewellCollector.AssemblyInfoInputs.cache
+C:\Users\eduardo.franco\UNICAMP\Programacao_em_C#\JewellCollector\obj\Debug\net7.0\JewellCollector.AssemblyInfo.cs
+C:\Users\eduardo.franco\UNICAMP\Programacao_em_C#\JewellCollector\obj\Debug\net7.0\JewellCollector.csproj.CoreCompileInputs.cache
+C:\Users\eduardo.franco\UNICAMP\Programacao_em_C#\JewellCollector\obj\Debug\net7.0\JewellCollector.dll
+C:\Users\eduardo.franco\UNICAMP\Programacao_em_C#\JewellCollector\obj\Debug\net7.0\refint\JewellCollector.dll
+C:\Users\eduardo.franco\UNICAMP\Programacao_em_C#\JewellCollector\obj\Debug\net7.0\JewellCollector.pdb
+C:\Users\eduardo.franco\UNICAMP\Programacao_em_C#\JewellCollector\obj\Debug\net7.0\JewellCollector.genruntimeconfig.cache
+C:\Users\eduardo.franco\UNICAMP\Programacao_em_C#\JewellCollector\obj\Debug\net7.0\ref\JewellCollector.dll
