@@ -1,5 +1,5 @@
 namespace JewellNS;
-public class Jewell
+public class Jewell : Cell
 {
     public string Name;
     public string Color;
@@ -40,5 +40,21 @@ public class Jewell
     public string toString()
     {
         return $"Cor: {this.Color}, Point: {this.Point}, Name: {this.Name}";
+    }
+
+    public void Draw(string type)
+    {
+        if (type == "red")
+        {
+            Console.Write("JR");
+        }
+        else if (type == "blue")
+        {
+            Console.Write("JB");
+        }
+        else
+        {
+            Console.Write("JG");
+        }
     }
 }

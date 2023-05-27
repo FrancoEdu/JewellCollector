@@ -1,5 +1,5 @@
 namespace JewellNS;
-interface Cell
+public interface Cell
 {
-
+    public void Draw(string type);
 }

@@ -2,8 +2,11 @@
 {
     public class JewelCollector
     {
-        public static void Main()
+        public static void Main(string[] args)
         {
+            Map map = new Map(10, 10);
+            map.PrintMap();
+
             // Console.WriteLine("Para sair do programa digite 'quit' ");
             // bool running = true;
             // do
