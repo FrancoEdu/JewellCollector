@@ -2,27 +2,49 @@ namespace JewellNS;
 
 public class Map
 {
-    private Cell[,] cells;
+    private Object[,] arrayObj;
+    private int linha;
+    private int coluna;
 
     public Map(int width, int height)
     {
-        cells = new Cell[width, height];
+        this.linha = width;
+        this.coluna = height;
+        arrayObj = new Object[width, height];
     }
 
-    public void setCell(int i, int j, Cell obj)
+    public void setCell(int i, int j, Object obj)
     {
-        cells[i, j] = obj;
+        if (obj is Jewell jewell)
+        {
+            arrayObj[i, j] = jewell;
+        }
+        else if (obj is Obstacle obstacle)
+        {
+            arrayObj[i, j] = obstacle;
+        }
     }
 
     public void PrintMap()
     {
         Console.Clear();
 
-        for (int i = 0; i < cells.GetLength(0); i++)
+        for (int i = 0; i < linha; i++)
         {
-            for (int j = 0; j < cells.GetLength(1); j++)
+            for (int j = 0; j < coluna; j++)
             {
-                Console.Write(" -- ");
+                if (arrayObj[i, j] is null)
+                {
+                    Console.Write(" -- ");
+                }
+                else if (arrayObj[i, j] is Jewell jewell)
+                {
+                    Console.Write(jewell.Name);
+                }
+                else if (arrayObj[i, j] is Obstacle obstacle)
+                {
+                    Console.Write(obstacle.obstacle);
+                }
             }
             Console.WriteLine();
         }

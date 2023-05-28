@@ -5,6 +5,30 @@
         public static void Main(string[] args)
         {
             Map map = new Map(10, 10);
+            Jewell jr = new Jewell { Color = "red", Name = " JR ", Point = 100 };
+            Jewell jg = new Jewell { Color = "green", Name = " JG ", Point = 50 };
+            Jewell jb = new Jewell { Color = "blue", Name = " JB ", Point = 10 };
+            Obstacle water = new Obstacle { obstacle = " ## " };
+            Obstacle tree = new Obstacle { obstacle = " $$ " };
+            map.setCell(1, 9, jr);
+            map.setCell(8, 8, jr);
+            map.setCell(9, 1, jg);
+            map.setCell(7, 6, jg);
+            map.setCell(3, 4, jb);
+            map.setCell(2, 1, jb);
+            map.setCell(5, 0, water);
+            map.setCell(5, 1, water);
+            map.setCell(5, 2, water);
+            map.setCell(5, 3, water);
+            map.setCell(5, 4, water);
+            map.setCell(5, 5, water);
+            map.setCell(5, 6, water);
+            map.setCell(5, 9, tree);
+            map.setCell(3, 9, tree);
+            map.setCell(8, 3, tree);
+            map.setCell(2, 5, tree);
+            map.setCell(1, 4, tree);
+
             map.PrintMap();
 
             // Console.WriteLine("Para sair do programa digite 'quit' ");
