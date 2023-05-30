@@ -23,9 +23,11 @@ public class Player
 
     public void moveToLeft()
     {
-        if (this.getLinhaPlayer() > 0)
+        Map map = new Map(10, 10);
+        if (this.getColunaPlayer() > 0)
         {
-
+            map.removeCell(getLinhaPlayer(), getColunaPlayer());
+            map.setCell(getLinhaPlayer(), getColunaPlayer() - 1, this);
         }
     }
     public void moveToRight()

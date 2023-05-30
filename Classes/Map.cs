@@ -5,6 +5,10 @@ public class Map
     private Object[,] arrayObj;
     private int linha;
     private int coluna;
+
+    public int getNumberOfColunas() { return this.coluna; }
+    public int getNumberOfLinhas() { return this.linha; }
+    public Map() { }
     public Map(int width, int height)
     {
         this.linha = width;

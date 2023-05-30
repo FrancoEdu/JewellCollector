@@ -30,10 +30,11 @@ public class JewelCollector
         map.setCell(2, 5, tree);
         map.setCell(1, 4, tree);
         map.PrintMap();
-        Play(player, tree, water, jr, jb, jg);
+        map.FindPlayerPosition();
+        Play(player, tree, water, jr, jb, jg, map);
     }
 
-    public static void Play(Player player, Obstacle tree, Obstacle water, Jewell jr, Jewell jb, Jewell jg)
+    public static void Play(Player player, Obstacle tree, Obstacle water, Jewell jr, Jewell jb, Jewell jg, Map map)
     {
         Console.WriteLine("Para sair do programa digite 'quit' ");
         bool running = true;
@@ -54,11 +55,12 @@ public class JewelCollector
             {
                 try
                 {
+                    map.FindPlayerPosition();
                     player.moveToLeft();
                 }
-                catch
+                catch (Exception e)
                 {
-                    Console.WriteLine(":/");
+                    Console.WriteLine(e);
                 }
             }
             else if (command.Equals("s"))
