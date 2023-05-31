@@ -36,10 +36,10 @@ public class JewelCollector
 
     public static void Play(Player player, Obstacle tree, Obstacle water, Jewell jr, Jewell jb, Jewell jg, Map map)
     {
-        Console.WriteLine("Para sair do programa digite 'quit' ");
         bool running = true;
         do
         {
+            Console.WriteLine(player.toString());
             Console.WriteLine("Enter the command: ");
             string command = Console.ReadLine()!;
 

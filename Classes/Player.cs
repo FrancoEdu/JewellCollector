@@ -1,7 +1,8 @@
 namespace JewellNS;
 public class Player
 {
-    private int bag = 5;
+    private int bagValue = 0;
+    private Object[] bagItems = new Object[] { };
     public string Name { get; set; }
     private int linhaPlayer;
     private int colunaPlayer;
@@ -18,31 +19,40 @@ public class Player
 
     public string toString()
     {
-        return $"Name {this.Name}";
+        return $"Bag total items: {this.bagItems.Length} | Bag total value: {this.bagValue}";
     }
 
     public void moveToLeft(Map map)
     {
         if (this.getColunaPlayer() > 0)
         {
-            map.removeCell(getLinhaPlayer(), getColunaPlayer());
-            map.setCell(getLinhaPlayer(), getColunaPlayer() - 1, this);
+            if (existsJewellOrObstacle(getLinhaPlayer(), getColunaPlayer() - 1, map) == false)
+            {
+                map.removeCell(getLinhaPlayer(), getColunaPlayer());
+                map.setCell(getLinhaPlayer(), getColunaPlayer() - 1, this);
+            }
         }
     }
     public void moveToRight(Map map)
     {
         if (this.getColunaPlayer() < map.getNumberOfColunas())
         {
-            map.removeCell(getLinhaPlayer(), getColunaPlayer());
-            map.setCell(getLinhaPlayer(), getColunaPlayer() + 1, this);
+            if (existsJewellOrObstacle(getLinhaPlayer(), getColunaPlayer() + 1, map) == false)
+            {
+                map.removeCell(getLinhaPlayer(), getColunaPlayer());
+                map.setCell(getLinhaPlayer(), getColunaPlayer() + 1, this);
+            }
         }
     }
     public void moveToTop(Map map)
     {
         if (this.getLinhaPlayer() > 0)
         {
-            map.removeCell(getLinhaPlayer(), getColunaPlayer());
-            map.setCell(getLinhaPlayer() - 1, getColunaPlayer(), this);
+            if (existsJewellOrObstacle(getLinhaPlayer() - 1, getColunaPlayer(), map) == false)
+            {
+                map.removeCell(getLinhaPlayer(), getColunaPlayer());
+                map.setCell(getLinhaPlayer() - 1, getColunaPlayer(), this);
+            }
         }
     }
     public void moveToBottom(Map map)
@@ -59,7 +69,7 @@ public class Player
     public bool existsJewellOrObstacle(int proximaLinha, int proximaColuna, Map map)
     {
         Object posicao = map.getObject(proximaLinha, proximaColuna);
-        if (posicao is Obstacle obstacle || posicao is Jewell jewell)
+        if (posicao is Jewell jewell || posicao is Obstacle obstacle)
         {
             return true;
         }
