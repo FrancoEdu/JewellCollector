@@ -2,6 +2,7 @@ namespace JewellNS;
 public class Player
 {
     private int bagValue = 0;
+    private int energy = 5;
     private Object[] bagItems = new Object[] { };
     private string name;
     private int linhaPlayer;
@@ -11,6 +12,7 @@ public class Player
         this.name = name;
     }
     public string getName() { return this.name; }
+    public int getEnergy() { return this.energy; }
     public int getLinhaPlayer() { return this.linhaPlayer; }
     public int getColunaPlayer() { return this.colunaPlayer; }
     public void setLinhaPlayer(int linha)
@@ -33,6 +35,7 @@ public class Player
         {
             if (existsJewellOrObstacle(getLinhaPlayer(), getColunaPlayer() - 1, map) == false)
             {
+                energy--;
                 map.removeCell(getLinhaPlayer(), getColunaPlayer());
                 map.setCell(getLinhaPlayer(), getColunaPlayer() - 1, this);
             }
@@ -44,6 +47,7 @@ public class Player
         {
             if (existsJewellOrObstacle(getLinhaPlayer(), getColunaPlayer() + 1, map) == false)
             {
+                energy--;
                 map.removeCell(getLinhaPlayer(), getColunaPlayer());
                 map.setCell(getLinhaPlayer(), getColunaPlayer() + 1, this);
             }
@@ -55,6 +59,7 @@ public class Player
         {
             if (existsJewellOrObstacle(getLinhaPlayer() - 1, getColunaPlayer(), map) == false)
             {
+                energy--;
                 map.removeCell(getLinhaPlayer(), getColunaPlayer());
                 map.setCell(getLinhaPlayer() - 1, getColunaPlayer(), this);
             }
@@ -66,6 +71,7 @@ public class Player
         {
             if (existsJewellOrObstacle(getLinhaPlayer() + 1, getColunaPlayer(), map) == false)
             {
+                energy--;
                 map.removeCell(getLinhaPlayer(), getColunaPlayer());
                 map.setCell(getLinhaPlayer() + 1, getColunaPlayer(), this);
             }
@@ -85,27 +91,27 @@ public class Player
     {
         map.FindPlayerPosition();
         int linhaDoJogador = getLinhaPlayer();
-        int colunaDoJoagdor = getColunaPlayer();
+        int colunaDoJogador = getColunaPlayer();
 
-        if (map.getObject(linhaDoJogador + 1, colunaDoJoagdor) is Jewell)
+        if (map.getObject(linhaDoJogador + 1, colunaDoJogador) is Jewell)
         {
-            updateBag(map.getObject(linhaDoJogador + 1, colunaDoJoagdor));
-            map.removeCell(linhaDoJogador + 1, colunaDoJoagdor);
+            updateBag(map.getObject(linhaDoJogador + 1, colunaDoJogador));
+            map.removeCell(linhaDoJogador + 1, colunaDoJogador);
         }
-        else if (map.getObject(linhaDoJogador - 1, colunaDoJoagdor) is Jewell)
+        else if (map.getObject(linhaDoJogador - 1, colunaDoJogador) is Jewell)
         {
-            updateBag(map.getObject(linhaDoJogador - 1, colunaDoJoagdor));
-            map.removeCell(linhaDoJogador - 1, colunaDoJoagdor);
+            updateBag(map.getObject(linhaDoJogador - 1, colunaDoJogador));
+            map.removeCell(linhaDoJogador - 1, colunaDoJogador);
         }
-        else if (map.getObject(linhaDoJogador, colunaDoJoagdor + 1) is Jewell)
+        else if (map.getObject(linhaDoJogador, colunaDoJogador + 1) is Jewell)
         {
-            updateBag(map.getObject(linhaDoJogador, colunaDoJoagdor + 1));
-            map.removeCell(linhaDoJogador, colunaDoJoagdor + 1);
+            updateBag(map.getObject(linhaDoJogador, colunaDoJogador + 1));
+            map.removeCell(linhaDoJogador, colunaDoJogador + 1);
         }
-        else if (map.getObject(linhaDoJogador, colunaDoJoagdor - 1) is Jewell)
+        else if (map.getObject(linhaDoJogador, colunaDoJogador - 1) is Jewell)
         {
-            updateBag(map.getObject(linhaDoJogador, colunaDoJoagdor - 1));
-            map.removeCell(linhaDoJogador, colunaDoJoagdor - 1);
+            updateBag(map.getObject(linhaDoJogador, colunaDoJogador - 1));
+            map.removeCell(linhaDoJogador, colunaDoJogador - 1);
         }
     }
 
