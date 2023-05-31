@@ -4,13 +4,13 @@ public class JewelCollector
     public static void Main(string[] args)
     {
         Map map = new Map(10, 10);
-        Jewell jr = new Jewell { Color = "red", Name = " JR ", Point = 100 };
-        Jewell jg = new Jewell { Color = "green", Name = " JG ", Point = 50 };
-        Jewell jb = new Jewell { Color = "blue", Name = " JB ", Point = 10 };
-        Obstacle water = new Obstacle { obstacle = " ## ", };
-        Obstacle tree = new Obstacle { obstacle = " $$ " };
-        Player player = new Player { Name = " ME " };
-        map.setCell(0, 3, player);
+        Jewell jr = new Jewell("red", " JR ", 100);
+        Jewell jg = new Jewell("green", " JG ", 50);
+        Jewell jb = new Jewell("blue", " JB ", 10);
+        Obstacle water = new Obstacle("water", " ## ");
+        Obstacle tree = new Obstacle("tree", " $$ ");
+        Player player = new Player(" ME ");
+        map.setCell(0, 0, player);
         map.setCell(1, 9, jr);
         map.setCell(8, 8, jr);
         map.setCell(9, 1, jg);
@@ -101,7 +101,16 @@ public class JewelCollector
             }
             else if (command.Equals("g"))
             {
-                Console.WriteLine("g");
+                try
+                {
+                    map.FindPlayerPosition();
+                    player.captureJewell(map);
+                    map.PrintMap();
+                }
+                catch
+                {
+                    Console.WriteLine("Não existe joia ao redor");
+                }
             }
         } while (running);
     }

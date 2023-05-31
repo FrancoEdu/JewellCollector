@@ -52,15 +52,15 @@ public class Map
                 }
                 else if (arrayObj[i, j] is Jewell jewell)
                 {
-                    Console.Write(jewell.Name);
+                    Console.Write(jewell.getName());
                 }
                 else if (arrayObj[i, j] is Obstacle obstacle)
                 {
-                    Console.Write(obstacle.obstacle);
+                    Console.Write(obstacle.getSymbol());
                 }
                 else if (arrayObj[i, j] is Player player)
                 {
-                    Console.Write(player.Name);
+                    Console.Write(player.getName());
                 }
             }
             Console.WriteLine();

@@ -3,9 +3,14 @@ public class Player
 {
     private int bagValue = 0;
     private Object[] bagItems = new Object[] { };
-    public string Name { get; set; }
+    private string name;
     private int linhaPlayer;
     private int colunaPlayer;
+    public Player(string name)
+    {
+        this.name = name;
+    }
+    public string getName() { return this.name; }
     public int getLinhaPlayer() { return this.linhaPlayer; }
     public int getColunaPlayer() { return this.colunaPlayer; }
     public void setLinhaPlayer(int linha)
@@ -74,5 +79,43 @@ public class Player
             return true;
         }
         return false;
+    }
+
+    public void captureJewell(Map map)
+    {
+        map.FindPlayerPosition();
+        int linhaDoJogador = getLinhaPlayer();
+        int colunaDoJoagdor = getColunaPlayer();
+
+        if (map.getObject(linhaDoJogador + 1, colunaDoJoagdor) is Jewell)
+        {
+            updateBag(map.getObject(linhaDoJogador + 1, colunaDoJoagdor));
+            map.removeCell(linhaDoJogador + 1, colunaDoJoagdor);
+        }
+        else if (map.getObject(linhaDoJogador - 1, colunaDoJoagdor) is Jewell)
+        {
+            updateBag(map.getObject(linhaDoJogador - 1, colunaDoJoagdor));
+            map.removeCell(linhaDoJogador - 1, colunaDoJoagdor);
+        }
+        else if (map.getObject(linhaDoJogador, colunaDoJoagdor + 1) is Jewell)
+        {
+            updateBag(map.getObject(linhaDoJogador, colunaDoJoagdor + 1));
+            map.removeCell(linhaDoJogador, colunaDoJoagdor + 1);
+        }
+        else if (map.getObject(linhaDoJogador, colunaDoJoagdor - 1) is Jewell)
+        {
+            updateBag(map.getObject(linhaDoJogador, colunaDoJoagdor - 1));
+            map.removeCell(linhaDoJogador, colunaDoJoagdor - 1);
+        }
+    }
+
+    public void updateBag(Object objeto)
+    {
+        if (objeto is Jewell jewell)
+        {
+            this.bagValue = this.bagValue + jewell.getPoint();
+            Array.Resize(ref bagItems, bagItems.Length + 1);
+            bagItems[bagItems.Length - 1] = jewell;
+        }
     }
 }
