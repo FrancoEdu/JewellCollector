@@ -49,14 +49,24 @@ public class JewelCollector
             }
             else if (command.Equals("w"))
             {
-                Console.WriteLine("w");
+                try
+                {
+                    map.FindPlayerPosition();
+                    player.moveToTop(map);
+                    map.PrintMap();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
             }
             else if (command.Equals("a"))
             {
                 try
                 {
                     map.FindPlayerPosition();
-                    player.moveToLeft();
+                    player.moveToLeft(map);
+                    map.PrintMap();
                 }
                 catch (Exception e)
                 {
@@ -65,11 +75,29 @@ public class JewelCollector
             }
             else if (command.Equals("s"))
             {
-                Console.WriteLine("s");
+                try
+                {
+                    map.FindPlayerPosition();
+                    player.moveToBottom(map);
+                    map.PrintMap();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
             }
             else if (command.Equals("d"))
             {
-                Console.WriteLine("d");
+                try
+                {
+                    map.FindPlayerPosition();
+                    player.moveToRight(map);
+                    map.PrintMap();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
             }
             else if (command.Equals("g"))
             {

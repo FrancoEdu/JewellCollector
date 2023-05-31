@@ -15,6 +15,10 @@ public class Map
         this.coluna = height;
         arrayObj = new Object[width, height];
     }
+    public Object getObject(int linha, int coluna)
+    {
+        return arrayObj[linha, coluna];
+    }
     public void setCell(int i, int j, Object obj)
     {
         if (obj is Jewell jewell)
